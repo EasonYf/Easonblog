@@ -1,14 +1,1 @@
-export const data = JSON.parse("{\"key\":\"v-99667cf8\",\"path\":\"/demo/front-end/ajax/\",\"title\":\"AJAX\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"AJAX\",\"category\":[\"目录\",\"导航\"],\"tag\":[\"目录\",\"导航\"],\"sticky\":false,\"star\":false,\"article\":false,\"timeline\":false,\"description\":\"\"},\"headers\":[],\"readingTime\":{\"minutes\":0.32,\"words\":95},\"filePathRelative\":\"demo/front-end/ajax/README.md\",\"excerpt\":\"\",\"autoDesc\":true}")
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}
+export const data = JSON.parse("{\"key\":\"v-99667cf8\",\"path\":\"/demo/front-end/ajax/\",\"title\":\"AJAX\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"AJAX\",\"category\":[\"目录\",\"导航\"],\"tag\":[\"目录\",\"导航\"],\"sticky\":false,\"star\":false,\"article\":false,\"timeline\":false,\"description\":\"\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/Easonblog/demo/front-end/ajax/\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"EasonYF\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"AJAX\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2023-11-02T08:22:52.000Z\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"Mr.YF\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"目录\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"导航\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2023-11-02T08:22:52.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebPage\\\",\\\"name\\\":\\\"AJAX\\\"}\"]]},\"headers\":[],\"git\":{\"createdTime\":1698913372000,\"updatedTime\":1698913372000,\"contributors\":[{\"name\":\"Eason\",\"email\":\"1547837791@qq.com\",\"commits\":1}]},\"readingTime\":{\"minutes\":0.32,\"words\":95},\"filePathRelative\":\"demo/front-end/ajax/README.md\",\"localizedDate\":\"2023年11月2日\",\"excerpt\":\"\",\"autoDesc\":true}")

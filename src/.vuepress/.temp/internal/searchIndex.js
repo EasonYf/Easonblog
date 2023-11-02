@@ -11,9 +11,9 @@ export const searchIndex = [
     "headers": [
       {
         "level": 2,
-        "title": "AJAX",
-        "slug": "ajax",
-        "link": "#ajax",
+        "title": "C/C++",
+        "slug": "c-c",
+        "link": "#c-c",
         "children": []
       }
     ],
@@ -37,7 +37,7 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "",
+    "title": "变量、表达式与顺序语句",
     "headers": [
       {
         "level": 2,
@@ -690,16 +690,3 @@ export const searchIndex = [
     "extraFields": []
   }
 ]
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSearchIndex) {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ searchIndex }) => {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  })
-}
