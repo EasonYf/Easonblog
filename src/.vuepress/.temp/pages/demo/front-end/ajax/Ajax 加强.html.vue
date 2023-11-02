@@ -1,0 +1,250 @@
+<template><div><h2 id="xmlhttprequest的基本使用" tabindex="-1"><a class="header-anchor" href="#xmlhttprequest的基本使用" aria-hidden="true">#</a> <code v-pre>XMLHttpRequest</code>的基本使用</h2>
+<ul>
+<li>概念：<code v-pre>XMLHttpRequest</code>（简称xhr）是浏览器提供的JavaScript对象，通过它，可以请求服务器上的数据资源。</li>
+</ul>
+<h3 id="使用xhr发起get请求" tabindex="-1"><a class="header-anchor" href="#使用xhr发起get请求" aria-hidden="true">#</a> 使用xhr发起get请求</h3>
+<ul>
+<li>步骤：
+<ul>
+<li>创建xhr对象</li>
+<li>调用<code v-pre>xhr.open()</code>函数</li>
+<li>调用<code v-pre>xhr.send()</code>函数</li>
+<li>监听<code v-pre>xhr.onreadystatechange</code>事件</li>
+</ul>
+</li>
+</ul>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685699283460-efa9cb96-b911-4f34-a879-2fc579db2d4e.png#averageHue=%23e1eaf7&amp;clientId=ud7f3b2f1-caba-4&amp;from=paste&amp;height=521&amp;id=ub4258319&amp;originHeight=781&amp;originWidth=1439&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=377251&amp;status=done&amp;style=none&amp;taskId=u8942ff5f-e043-4d35-b01e-c02aff5834c&amp;title=&amp;width=959.3333333333334" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3 id="readystate属性" tabindex="-1"><a class="header-anchor" href="#readystate属性" aria-hidden="true">#</a> <code v-pre>readyState</code>属性</h3>
+<ul>
+<li><code v-pre>XMLHttpRequst</code>对象的<code v-pre>readyState</code>属性，用来表示当前Ajax 请求所处的状态，每个Ajax 请求必然处于以下之一：</li>
+</ul>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685699597988-929cebda-0c76-4f34-996e-d2672da332bf.png#averageHue=%23b9d2e9&amp;clientId=ud7f3b2f1-caba-4&amp;from=paste&amp;height=161&amp;id=u7407a813&amp;originHeight=242&amp;originWidth=745&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=112764&amp;status=done&amp;style=none&amp;taskId=ue468b275-5b18-45f2-9ef0-f171cd9a843&amp;title=&amp;width=496.6666666666667" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3 id="使用-xhr-发起带参数的-get-请求" tabindex="-1"><a class="header-anchor" href="#使用-xhr-发起带参数的-get-请求" aria-hidden="true">#</a> 使用 xhr 发起带参数的 get 请求</h3>
+<ul>
+<li>使用xhr 对象发起带参数的 get 请求，只需在调用 <code v-pre>xhr.open()</code>期间，为URL地址指定参数即可</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'get'</span><span class="token punctuation">,</span><span class="token string">'http://www.liulongbin.top:3006/api/getbooks?id=1'</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="url编码" tabindex="-1"><a class="header-anchor" href="#url编码" aria-hidden="true">#</a> URL编码</h3>
+<ul>
+<li>使用英文符号代替非英文符号</li>
+</ul>
+<h4 id="encodeuri-编码的函数" tabindex="-1"><a class="header-anchor" href="#encodeuri-编码的函数" aria-hidden="true">#</a> <code v-pre>encodeURI()</code>编码的函数</h4>
+<h4 id="decodeuri-解码的函数" tabindex="-1"><a class="header-anchor" href="#decodeuri-解码的函数" aria-hidden="true">#</a> <code v-pre>decodeURI()</code>解码的函数</h4>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685700449246-698adc52-e416-4862-9895-b986e71e36b0.png#averageHue=%23e0e9f6&amp;clientId=ud7f3b2f1-caba-4&amp;from=paste&amp;height=169&amp;id=u4471efab&amp;originHeight=253&amp;originWidth=1380&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=122917&amp;status=done&amp;style=none&amp;taskId=ud6428386-919d-482c-a60b-cf66700ef5f&amp;title=&amp;width=920" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3 id="使用-xhr-发起post请求" tabindex="-1"><a class="header-anchor" href="#使用-xhr-发起post请求" aria-hidden="true">#</a> 使用 xhr 发起POST请求</h3>
+<ul>
+<li>步骤：
+<ul>
+<li>创建 xhr 对象</li>
+<li>调用<code v-pre>xhr.open()</code>函数</li>
+<li>设置<code v-pre>Content-Type</code>属性（固定写法）</li>
+<li>调用<code v-pre>xhr.send()</code>函数，同时指定要发送的数据</li>
+<li>监听<code v-pre>xhr.onreadystatechange</code>事件</li>
+<li><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685700833005-8ac2b172-c247-402f-8211-fc4b4ce69093.png#averageHue=%23dfe8f6&amp;clientId=ud7f3b2f1-caba-4&amp;from=paste&amp;height=520&amp;id=u47042fec&amp;originHeight=780&amp;originWidth=1429&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=400961&amp;status=done&amp;style=none&amp;taskId=ub60e33d2-2325-442f-b683-7912337f5b2&amp;title=&amp;width=952.6666666666666" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></li>
+</ul>
+</li>
+</ul>
+<h2 id="数据交换格式" tabindex="-1"><a class="header-anchor" href="#数据交换格式" aria-hidden="true">#</a> 数据交换格式</h2>
+<ul>
+<li>概念：数据交换格式，就是服务器与客户端之间进行数据传输与交换的格式</li>
+</ul>
+<h3 id="xml" tabindex="-1"><a class="header-anchor" href="#xml" aria-hidden="true">#</a> XML</h3>
+<ul>
+<li><code v-pre>XML</code>为可扩展标记语言</li>
+</ul>
+<h3 id="json" tabindex="-1"><a class="header-anchor" href="#json" aria-hidden="true">#</a> JSON</h3>
+<ul>
+<li>概念：<code v-pre>JSON</code>的英文全称是<code v-pre>JavaScript Object Notation</code>，即JavaScript对象表示法。JSON就是用字符串来表示JavaScript的对象和数组。</li>
+</ul>
+<h4 id="json的两种结构" tabindex="-1"><a class="header-anchor" href="#json的两种结构" aria-hidden="true">#</a> JSON的两种结构</h4>
+<ul>
+<li>对象结构：对象结构在JSON中表示为<code v-pre>{}</code>括起来的内容，数据结构为<code v-pre>{key:value,key:value.....}</code>的键值对结构。其中<code v-pre>key</code>必须是使用英文的双引号包括起来的字符串，value的数据类型可以是数字、字符串、布尔值、null、数组、对象6种类型。</li>
+<li>数组结构：数组结构在JSON中表示为<code v-pre>[]</code>，据类型可以是数字、字符串、布尔值、null、数组、对象6种类型。</li>
+<li>注意：
+<ul>
+<li>属性名必须使用双引号包裹</li>
+<li>字符串类型的值必须使用双引号包裹</li>
+<li>JSON中不允许使用单引号表示字符串</li>
+<li>JSON中不能写注释</li>
+<li>JSON的最外层必须是对象或数组格式</li>
+<li>不能使用<code v-pre>undefined</code>或者函数作为JSON的值</li>
+</ul>
+</li>
+<li>json的作用：在计算机与网络之间存储和传输数据</li>
+</ul>
+<h4 id="序列化与反序列化" tabindex="-1"><a class="header-anchor" href="#序列化与反序列化" aria-hidden="true">#</a> 序列化与反序列化</h4>
+<ul>
+<li>把数据对象转换成字符串的过程，叫做序列化，例如：调用<code v-pre>JSON.stringify()</code>函数的操作，叫做JSON序列化</li>
+<li>把字符串转换成数据对象的过程，叫做反序列化，例如：调用<code v-pre>JSON.parse()</code>函数的操作，叫做JSON反序列化</li>
+</ul>
+<h2 id="封装ajax函数" tabindex="-1"><a class="header-anchor" href="#封装ajax函数" aria-hidden="true">#</a> 封装<code v-pre>Ajax</code>函数</h2>
+<div class="language-html line-numbers-mode" data-ext="html"><pre v-pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./js/itheima.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token comment">// itheima({</span>
+      <span class="token comment">//   method: 'GET',</span>
+      <span class="token comment">//   url: 'http://www.liulongbin.top:3006/api/getbooks',</span>
+      <span class="token comment">//   data: {</span>
+      <span class="token comment">//     id: 1</span>
+      <span class="token comment">//   },</span>
+      <span class="token comment">//   success: function (res) {</span>
+      <span class="token comment">//     console.log(res)</span>
+      <span class="token comment">//   }</span>
+      <span class="token comment">// })</span>
+
+      <span class="token function">itheima</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'http://ajax-base-api-t.itheima.net/api/addbook'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">bookname</span><span class="token operator">:</span> <span class="token string">'重庆科技学院到此一游'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">author</span><span class="token operator">:</span> <span class="token string">'重庆科技学院-Eason'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">publisher</span><span class="token operator">:</span> <span class="token string">'重庆科技学院'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">resolveData</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> k <span class="token keyword">in</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>k <span class="token operator">+</span> <span class="token string">'='</span> <span class="token operator">+</span> data<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'&amp;'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// const ans = resolveData({bookname: '重庆',</span>
+<span class="token comment">// author: '施耐庵',</span>
+<span class="token comment">// publisher: '北京图书出版社'})</span>
+<span class="token comment">//console.log(ans);</span>
+
+
+<span class="token keyword">function</span> <span class="token function">itheima</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ans <span class="token operator">=</span> <span class="token function">resolveData</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token comment">//获得json字符串</span>
+<span class="token comment">//1.创建 xhr 对象</span>
+  <span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>method<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'GET'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span>options<span class="token punctuation">.</span>url <span class="token operator">+</span> <span class="token string">'?'</span> <span class="token operator">+</span> ans<span class="token punctuation">)</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>method<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//2.调用open</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span>options<span class="token punctuation">.</span>url <span class="token operator">+</span> <span class="token string">'?'</span> <span class="token operator">+</span> ans<span class="token punctuation">)</span>
+      <span class="token comment">//设置Content-Type属性</span>
+    xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span><span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">)</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+
+<span class="token comment">//4.调用send</span>
+
+<span class="token comment">//监听onreadyStatechange事件</span>
+xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span>
+    options<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    <span class="token comment">//console.log(result)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token punctuation">}</span>
+
+
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="xmlhttprequest-leve2的新特性" tabindex="-1"><a class="header-anchor" href="#xmlhttprequest-leve2的新特性" aria-hidden="true">#</a> <code v-pre>XMLHttpRequest Leve2</code>的新特性</h2>
+<h3 id="设置http请求时限" tabindex="-1"><a class="header-anchor" href="#设置http请求时限" aria-hidden="true">#</a> 设置HTTP请求时限</h3>
+<ul>
+<li>新版本的<code v-pre>XMLHttpRequest</code>对象，增加了<code v-pre>timeout</code>属性，可以设置 HTTP 请求的时限</li>
+<li>语法：<code v-pre>xhr.timeout = 3000</code></li>
+</ul>
+<h3 id="formdata对象管理表单数据" tabindex="-1"><a class="header-anchor" href="#formdata对象管理表单数据" aria-hidden="true">#</a> <code v-pre>FormData</code>对象管理表单数据</h3>
+<ul>
+<li>Ajax 操作往往用来提交表单数据，为了方便表单处理，HTML5新增了<code v-pre>FormData</code>对象，可以模拟表单操作</li>
+<li><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685893228010-c85cec47-4738-44e0-ade3-7d0f1cab0a2e.png#averageHue=%23e3edf9&amp;clientId=u3db06f25-64c3-4&amp;from=paste&amp;height=423&amp;id=uae83ea3d&amp;originHeight=635&amp;originWidth=1396&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=269917&amp;status=done&amp;style=none&amp;taskId=u35e683c5-f482-49cb-9217-6597a126afe&amp;title=&amp;width=930.6666666666666" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></li>
+<li><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685893740564-1a8ade2a-7fde-4314-82bf-d90655053ddb.png#averageHue=%23e3ecf9&amp;clientId=u3db06f25-64c3-4&amp;from=paste&amp;height=526&amp;id=ubc199bf6&amp;originHeight=789&amp;originWidth=1445&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=389599&amp;status=done&amp;style=none&amp;taskId=uab194d68-ce73-4c57-9398-fad97c146bc&amp;title=&amp;width=963.3333333333334" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></li>
+</ul>
+<h3 id="上传文件" tabindex="-1"><a class="header-anchor" href="#上传文件" aria-hidden="true">#</a> 上传文件</h3>
+<ul>
+<li><code v-pre>XMLHttpRequst</code>对象，不仅可以发送文本信息，还可以上传文件</li>
+<li>步骤：
+<ul>
+<li>定义 UI 结构</li>
+<li>验证是否选择了文件</li>
+<li>向<code v-pre>FormData</code>中追加文件</li>
+<li>使用 xhr 发起上传文件的请求</li>
+<li>监听<code v-pre>onreadyStatechange</code>事件</li>
+</ul>
+</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token comment">//1.获取到文件上传按钮</span>
+<span class="token keyword">let</span> btnUpload <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#btnUpload'</span><span class="token punctuation">)</span>
+<span class="token comment">//2.为按钮绑定点击事件</span>
+btnUpload<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//3.获取到用户选择的文件列表</span>
+  <span class="token keyword">let</span> files <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#file1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>files
+  <span class="token keyword">if</span><span class="token punctuation">(</span>files<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'请选择要上传的文件'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> fd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">//将用户选择的文件,添加到FormData中</span>
+  fd<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'avatar'</span><span class="token punctuation">,</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+  xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span>
+
+  xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responsetext<span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="显示文件上传进度" tabindex="-1"><a class="header-anchor" href="#显示文件上传进度" aria-hidden="true">#</a> 显示文件上传进度</h3>
+<ul>
+<li>新版本的<code v-pre>XMLHttpRequest</code>对象中,可以通过监听<code v-pre>xhr.upload.onprogess</code>事件,来获取到文件的上传进度</li>
+<li>语法:<img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685895820608-57f95e47-23b2-43b3-97f8-441ae7591f3f.png#averageHue=%23e3edf9&amp;clientId=u3db06f25-64c3-4&amp;from=paste&amp;height=433&amp;id=u26ac960e&amp;originHeight=649&amp;originWidth=1546&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=247910&amp;status=done&amp;style=none&amp;taskId=ubcf36b8b-6320-4c99-9efa-1968895e119&amp;title=&amp;width=1030.6666666666667" alt="image.png" loading="lazy"></li>
+</ul>
+<h2 id="jquery高级用法" tabindex="-1"><a class="header-anchor" href="#jquery高级用法" aria-hidden="true">#</a> <code v-pre>jQuery</code>高级用法</h2>
+<h2 id="axios" tabindex="-1"><a class="header-anchor" href="#axios" aria-hidden="true">#</a> <code v-pre>axios</code></h2>
+<ul>
+<li><code v-pre>Axios</code>是专注于网络数据请求的库,相比原生的<code v-pre>XMLHttpRequest</code>对象,<code v-pre>axios</code>简单易用,相比于<code v-pre>jQuery</code>,<code v-pre>axios</code>更加轻量化,只专注于网络数据请求</li>
+</ul>
+<h3 id="axios发起-get-请求" tabindex="-1"><a class="header-anchor" href="#axios发起-get-请求" aria-hidden="true">#</a> <code v-pre>axios</code>发起 get 请求</h3>
+<ul>
+<li>语法：<code v-pre>axios.get('url',( params : { //参数 })).then(callback)</code></li>
+<li><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685934914860-230653c8-1ab8-402b-b34d-2b2e75d2f0cc.png#averageHue=%23e3edf9&amp;clientId=u76eba430-e6c1-4&amp;from=paste&amp;height=325&amp;id=u22ad3b08&amp;originHeight=488&amp;originWidth=1406&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=240825&amp;status=done&amp;style=none&amp;taskId=u618fb40a-d737-4cb7-9e15-42181715de1&amp;title=&amp;width=937.3333333333334" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></li>
+</ul>
+<h3 id="axios发起-post-请求" tabindex="-1"><a class="header-anchor" href="#axios发起-post-请求" aria-hidden="true">#</a> <code v-pre>axios</code>发起 post 请求</h3>
+<ul>
+<li><code v-pre>axios.post('url',( params : { //参数 })).then(callback)</code></li>
+<li><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685935174634-f6bfbbfe-7234-493d-9b1f-88cf102b1ef8.png#averageHue=%23e3edf9&amp;clientId=u76eba430-e6c1-4&amp;from=paste&amp;height=320&amp;id=u32d90a62&amp;originHeight=480&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=253065&amp;status=done&amp;style=none&amp;taskId=ue21e0031-1258-4e0d-9ca6-773c2fc4ab5&amp;title=&amp;width=933.3333333333334" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></li>
+</ul>
+<h3 id="直接使用axios发起请求" tabindex="-1"><a class="header-anchor" href="#直接使用axios发起请求" aria-hidden="true">#</a> 直接使用<code v-pre>axios</code>发起请求</h3>
+<ul>
+<li><code v-pre>axios</code>也提供了类似于<code v-pre>jQuery</code>中<code v-pre>$.ajax()</code>的函数</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span><span class="token string">'请求类型'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">'请求的URL地址'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span> <span class="token comment">/* post 数据 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">{</span> <span class="token comment">/*get数据*/</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+

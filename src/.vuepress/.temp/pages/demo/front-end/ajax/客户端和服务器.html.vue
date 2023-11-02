@@ -1,0 +1,81 @@
+<template><div><h2 id="服务器" tabindex="-1"><a class="header-anchor" href="#服务器" aria-hidden="true">#</a> 服务器</h2>
+<ul>
+<li>在上网过程中，负责存放和对外提供资源的电脑，叫做服务器</li>
+</ul>
+<h2 id="客户端" tabindex="-1"><a class="header-anchor" href="#客户端" aria-hidden="true">#</a> 客户端</h2>
+<ul>
+<li>在上网过程中，负责获取和消费资源的电脑，叫做客户端</li>
+</ul>
+<h1 id="url地址" tabindex="-1"><a class="header-anchor" href="#url地址" aria-hidden="true">#</a> URL地址</h1>
+<p><strong>概念</strong>
+●url中午叫统一资源定位符，用于标识互联网上每个资源的唯一存放位置。浏览器只有通过URL地址，才能正确定位资源的存放地址，从而成功访问到对应的资源
+<strong>组成部分</strong>
+URL地址一般由三部分组成：
+1客户端与服务器之间的通信协议
+2存有该资源的服务器名称
+3资源在服务器上具体的存放位置</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685260320150-a0b2caa9-7015-4061-b2d3-30885bfa24fa.png#averageHue=%23eef8f1&amp;from=url&amp;id=DwzhP&amp;originHeight=162&amp;originWidth=860&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<h1 id="客户端与服务器的通信过程" tabindex="-1"><a class="header-anchor" href="#客户端与服务器的通信过程" aria-hidden="true">#</a> 客户端与服务器的通信过程</h1>
+<h3 id="图解客户端与服务器的通信过程" tabindex="-1"><a class="header-anchor" href="#图解客户端与服务器的通信过程" aria-hidden="true">#</a> 图解客户端与服务器的通信过程</h3>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685260656097-baff5905-d6ee-4412-8d13-158af80f27f4.png#averageHue=%23f1f4f1&amp;clientId=ue457f8f5-2dc0-4&amp;from=paste&amp;height=399&amp;id=u812925e0&amp;originHeight=598&amp;originWidth=1847&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=332075&amp;status=done&amp;style=none&amp;taskId=ub6e7b8d4-71f3-4ea8-9f29-ccd0fbd580c&amp;title=&amp;width=1231.3333333333333" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<ul>
+<li>注意：
+<ul>
+<li>客户端与服务器之间的通信过程，分为 请求 - 处理 - 响应 三个步骤</li>
+<li>网页中的每一个资源，都是通过 请求 - 处理 - 响应 的方式从服务器获取回来的</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于浏览器的开发者工具分析通信过程" tabindex="-1"><a class="header-anchor" href="#基于浏览器的开发者工具分析通信过程" aria-hidden="true">#</a> 基于浏览器的开发者工具分析通信过程</h3>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685260881840-7d62f47f-4f7a-4192-9b16-23f7095c91c9.png#averageHue=%23f4f7f4&amp;clientId=ue457f8f5-2dc0-4&amp;from=paste&amp;height=529&amp;id=u1f6e4d77&amp;originHeight=793&amp;originWidth=1772&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=415911&amp;status=done&amp;style=none&amp;taskId=u464704e4-cb35-492d-9fee-5fad20639b3&amp;title=&amp;width=1181.3333333333333" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h1 id="jquery中的ajax" tabindex="-1"><a class="header-anchor" href="#jquery中的ajax" aria-hidden="true">#</a> <code v-pre>jQuery</code>中的<code v-pre>Ajax</code></h1>
+<h2 id="get-函数" tabindex="-1"><a class="header-anchor" href="#get-函数" aria-hidden="true">#</a> <code v-pre>$.get()</code>函数</h2>
+<ul>
+<li><code v-pre>jQuery</code>中<code v-pre>$.get()</code>函数的功能单一，专门用来发起get请求，从而将服务器的资源请求到客户端来进行使用</li>
+<li>语法：<code v-pre>$.get(url,[data],[callback])</code></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685364572689-a67d62dd-5de3-4f20-b780-db97bbe9a9f1.png#averageHue=%23bad4ec&amp;clientId=u5895e14e-632b-4&amp;from=paste&amp;height=159&amp;id=u4ef829e5&amp;originHeight=238&amp;originWidth=759&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=84490&amp;status=done&amp;style=none&amp;taskId=u33f41a83-2b76-4291-a0fd-71df323c531&amp;title=&amp;width=506" alt="image.png" loading="lazy">
+<code v-pre>$.get()</code>发起不带参数的请求</p>
+<ul>
+<li>使用<code v-pre>$.get()</code>函数发起不带参数的请求时，直接提供请求的URL地址和请求成功之后的回调函数即可</li>
+</ul>
+<h2 id="post-函数" tabindex="-1"><a class="header-anchor" href="#post-函数" aria-hidden="true">#</a> <code v-pre>$.post()</code>函数</h2>
+<h3 id="语法" tabindex="-1"><a class="header-anchor" href="#语法" aria-hidden="true">#</a> 语法</h3>
+<ul>
+<li><code v-pre>jQuery</code>中<code v-pre>$.post()</code>函数的功能单一，专门用来发起post请求，从而向服务器提交数据</li>
+<li>语法：<code v-pre>$.post(url,[data],[callback])</code></li>
+</ul>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685366911919-0c88c53d-0d5e-48db-a76b-f2e89ab18e3b.png#averageHue=%23bbd6ee&amp;clientId=u5895e14e-632b-4&amp;from=paste&amp;height=313&amp;id=uee2166d3&amp;originHeight=469&amp;originWidth=1486&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=234402&amp;status=done&amp;style=none&amp;taskId=uee7f3ea0-8396-4dd4-bc92-eb3350f170e&amp;title=&amp;width=990.6666666666666" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3 id="post-向服务器提交数据" tabindex="-1"><a class="header-anchor" href="#post-向服务器提交数据" aria-hidden="true">#</a> <code v-pre>$.post()</code>向服务器提交数据</h3>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>$<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>
+  <span class="token string">'http://www.liulongbin.top:3006/api/addbook'</span><span class="token punctuation">,</span> <span class="token comment">//请求的URL地址</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">bookname</span><span class="token operator">:</span><span class="token string">'水浒传'</span><span class="token punctuation">,</span><span class="token literal-property property">author</span><span class="token operator">:</span><span class="token string">'施耐庵'</span><span class="token punctuation">,</span><span class="token literal-property property">publisher</span><span class="token operator">:</span><span class="token string">'上海图书出版社'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">//提交的数据</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">//回调函数</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="ajax-函数" tabindex="-1"><a class="header-anchor" href="#ajax-函数" aria-hidden="true">#</a> <code v-pre>$.ajax()</code>函数</h2>
+<ul>
+<li>相比于<code v-pre>$.get()</code>和<code v-pre>$.post()</code>函数，jQuery 中提供的<code v-pre>$.ajax()</code>函数，是一个功能比较综合的函数，它允许我们对Ajax请求进行更详细的配置</li>
+<li>语法：</li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-ext="js"><pre v-pre class="language-javascript"><code>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token comment">//请求的方式</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token comment">//请求的URL地址</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token comment">//这次请求的数据</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token comment">//请求成功之后的回调函数</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="接口" tabindex="-1"><a class="header-anchor" href="#接口" aria-hidden="true">#</a> 接口</h1>
+<h2 id="概念" tabindex="-1"><a class="header-anchor" href="#概念" aria-hidden="true">#</a> 概念</h2>
+<ul>
+<li>使用<code v-pre>Ajax</code>请求数据时，被请求的<code v-pre>URL</code>地址，就叫做数据接口，每个接口必须有请求方式</li>
+</ul>
+<h2 id="分析接口的请求过程" tabindex="-1"><a class="header-anchor" href="#分析接口的请求过程" aria-hidden="true">#</a> 分析接口的请求过程</h2>
+<h3 id="通过get方式请求接口的过程" tabindex="-1"><a class="header-anchor" href="#通过get方式请求接口的过程" aria-hidden="true">#</a> 通过GET方式请求接口的过程</h3>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685449183848-d130148b-b349-40b3-bd79-05d93bd1cb02.png#averageHue=%23f2f5f2&amp;clientId=u45f91db9-ace9-4&amp;from=paste&amp;height=156&amp;id=u28a0cbc8&amp;originHeight=234&amp;originWidth=793&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=55434&amp;status=done&amp;style=none&amp;taskId=ufc09f89c-4a93-43c9-8e98-8601c615685&amp;title=&amp;width=528.6666666666666" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3 id="通过post方式请求接口的过程" tabindex="-1"><a class="header-anchor" href="#通过post方式请求接口的过程" aria-hidden="true">#</a> 通过POST方式请求接口的过程</h3>
+<figure><img src="https://cdn.nlark.com/yuque/0/2023/png/35273604/1685449263106-23ca5047-92e7-433f-9906-2a915b86fe02.png#averageHue=%23f3f5f2&amp;clientId=u45f91db9-ace9-4&amp;from=paste&amp;height=155&amp;id=ub4618423&amp;originHeight=232&amp;originWidth=802&amp;originalType=binary&amp;ratio=1.5&amp;rotation=0&amp;showTitle=false&amp;size=56962&amp;status=done&amp;style=none&amp;taskId=ub9bd3202-64e3-41be-8fff-36492a48c00&amp;title=&amp;width=534.6666666666666" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h2 id="接口文档" tabindex="-1"><a class="header-anchor" href="#接口文档" aria-hidden="true">#</a> 接口文档</h2>
+</div></template>
+
+
